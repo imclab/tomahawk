@@ -482,7 +482,7 @@ Tomahawk.ajax = function(url, settings) {
         var contentType;
         if (settings.dataType === 'json') {
             contentType = 'application/json';
-        } else if (contentType = 'xml') {
+        } else if (contentType === 'xml') {
             contentType = 'text/xml';
         } else {
             contentType = xhr.getResponseHeader('Content-Type');
@@ -506,7 +506,7 @@ Tomahawk.post = function(url, settings) {
         settings = url;
     } else {
         settings = settings || {};
-        settings: url;
+        settings.url = url;
     }
 
     settings.method = 'POST';
